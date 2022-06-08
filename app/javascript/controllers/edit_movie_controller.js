@@ -1,7 +1,7 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = ["infos", "form"];
+  static targets = ["infos", "form", "card"];
 
   connect() {
     console.log("Connected to the Edit Movie controller");
@@ -22,7 +22,7 @@ export default class extends Controller {
     })
       .then(response => response.text())
       .then((data) => {
-        console.log(data)
+        this.cardTarget.outerHTML = data;
       })
   }
 }

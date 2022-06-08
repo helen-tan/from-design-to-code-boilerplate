@@ -1,7 +1,7 @@
-<div class="movie-card" data-controller="edit-movie">
+<div class="movie-card" data-controller="edit-movie" data-edit-movie-target="card">
   <%= image_tag movie.image_url %>
 
-  <div class="movie-infos" data-edit-movie-target="infos">
+  <div class="movie-infos <%= 'd-none' if movie.errors.any? %> " data-edit-movie-target="infos">
     <h2 title="<%= movie.title %> (<%= movie.year %>)">
       <%= movie.title %><small>(<%= movie.year %>)</small>
     </h2>
